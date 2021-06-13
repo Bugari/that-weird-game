@@ -1,17 +1,26 @@
 <script lang="ts">
-	import ButtonGrid from './ButtonGrid.svelte'
+  import Game from './Game.svelte'
+  import Home from './Home.svelte'
+  import { Router, Link, Route } from "svelte-routing";
+  export let url = "";
 </script>
 
-<main>
-<div class="columns is-mobile is-centered">
-  <div class="column is-half">
-    <p class="bd-notification is-primary">
-			<ButtonGrid />
-    </p>
-  </div>
-</div>
+<main class="bg">
+  <Router url="{url}">
+    <!-- <nav>
+      <Link to="/">Home</Link>
+      <Link to="game/1">Game</Link>
+    </nav> -->
+    <div>
+      <Route path="/"><Home /></Route>
+      <Route path="game/:seed" component="{Game}" />
+    </div>
+  </Router>
 </main>
 
-<style type="text/sass">
-
+<style type="scss">
+  .bg {
+    background: url("/double-bubble-outline.png");
+    height: 100%;
+  }
 </style>

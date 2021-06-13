@@ -15,7 +15,7 @@ export const calculate = functions.https.onRequest((request, response) => {
     const body = JSON.parse(request.body)
     const { seed, cells, change } = body;
     response.setHeader('Content-Type', 'application/json')
-    response.status(200).send(Rulebook.handle(seed, cells, change));
+    response.status(200).send(Rulebook.handle(seed, cells, change || null));
   })
   // response.setHeader('Access-Control-Allow-Origin', '*');
   // if (request.method === 'OPTIONS') {
