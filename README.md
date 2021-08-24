@@ -8,4 +8,4 @@ It was made to explore [Svelte](https://svelte.dev/).
 
 # Deployment
 
-This game was made as [Firebase](https://firebase.google.com/) deployable project. After selecting correct project, `firebase deploy` should do the trick :)
+This game was made as [Firebase](https://firebase.google.com/) deployable project. After selecting correct project, `npm run build && firebase deploy` should do the trick :)
